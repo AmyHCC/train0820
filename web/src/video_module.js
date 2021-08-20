@@ -29,6 +29,13 @@ class VideoModule extends Component {
         const data = res.data;
         this.setState({ gameAllData: data });
     }
+    // Post Data
+    async postData(someData) {
+        const dataApiUrl = ("/parameter");
+        const res = await axios.post(dataApiUrl, { 'teamType': someData });
+        const data = res.data;
+        console.log(data);
+    }
 
     // Get Select Options
     async getSelectOptions() {
@@ -43,6 +50,7 @@ class VideoModule extends Component {
     async selectedHandleChange(e) {
 
         this.getGameAllData(e.label)
+        this.postData('123')
 
         if (e.label == 'Guest'){
             const selected = "此選項編號: " + e.value + " 您選擇的是: 客隊"

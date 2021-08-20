@@ -48,7 +48,7 @@ def data_para_api():
         task = game_dada_json["HomeAllLogs"]
         return jsonify(task), 200
 
-@app.route('/parameter', methods=['POST'])
+@app.route('/parameter', methods=['POST','GET'])
 def parameter_api():
 
     parameter = request.json
@@ -59,5 +59,5 @@ def parameter_api():
 
 if __name__ == '__main__':
     app.config['JSON_AS_ASCII'] = False
-    app.run(debug=False)
+    app.run(debug=True)
     # app.run(debug=False, host='0.0.0.0', port=5000)
